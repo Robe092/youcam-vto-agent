@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-10-16T20:45:35.548Z",
+  "testClass": "INTEGRATION_TEST",
+  "keyPresent": true,
+  "apiRequestsMade": true,
+  "status": "FAIL",
+  "apiRequestCount": 1,
+  "error": "YouCam: HTTP 400 · CreditInsufficiency · Your account doesn't have enough credits to complete this request.. Aucun repli en simulation.",
+  "visualReview": "NOT_VERIFIED"
+}

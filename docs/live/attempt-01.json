@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-10-16T20:44:06.435Z",
+  "testClass": "INTEGRATION_TEST",
+  "keyPresent": true,
+  "apiRequestsMade": true,
+  "status": "FAIL",
+  "apiRequestCount": 1,
+  "error": "fetch failed",
+  "visualReview": "NOT_VERIFIED",
+  "diagnosis": "Configured host api.perfectcorp.com failed DNS resolution (ENOTFOUND). No provider task could be created. Corrected local configuration to yce-api-01.makeupar.com.",
+  "providerTaskCreations": 0
+}

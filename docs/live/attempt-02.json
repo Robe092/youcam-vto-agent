@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-10-16T20:45:10.928Z",
+  "testClass": "INTEGRATION_TEST",
+  "keyPresent": true,
+  "apiRequestsMade": true,
+  "status": "FAIL",
+  "apiRequestCount": 1,
+  "error": "YouCam: HTTP 400. Aucun repli en simulation.",
+  "visualReview": "NOT_VERIFIED"
+}
