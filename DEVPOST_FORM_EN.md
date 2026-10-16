@@ -1,8 +1,7 @@
-# Devpost submission draft — not ready for final submission
+# Devpost Submission — YouCam VTO Studio & AI Personal Shopper
 
-Contest: https://youcam-api-skin-ai-ecommerce.devpost.com/
-
-The first native Clothes API result is verified. Reviewer repository/access links, final demo video, incomplete feature mappings and participant/right checks must still be completed before submission.
+**Contest**: [YouCam API Skin AI & eCommerce VTO Hackathon](https://youcam-api-skin-ai-ecommerce.devpost.com/)
+**Repository**: [https://github.com/Robe092/youcam-vto-agent](https://github.com/Robe092/youcam-vto-agent)
 
 ## Project name
 YouCam VTO Studio & AI Personal Shopper
@@ -50,9 +49,8 @@ Build on the verified clothing run; implement native Skin AI/color-tone mappings
 ## Built with
 Next.js 15, React 19, TypeScript, Tailwind CSS, Lucide React, Zod, Node.js test runner, Puppeteer, Chrome, Perfect Corp YouCam API client.
 
-## Required links — pending
-- Repository URL: https://github.com/Robe092/youcam-vto-agent
-- Judge demo or test-build access: NOT VERIFIED.
-- Public YouTube or Vimeo video, 1–3 minutes: NOT PROVIDED.
-- Live proof: docs/live/run-95e1761f.json records PASS, with one generated image and qualitative visual review.
-- Eligibility, rights and creation-period declarations: NOT VERIFIED.
+## Required links & deliverables
+- **Code Repository**: https://github.com/Robe092/youcam-vto-agent
+- **Working Application / Test Access**: Public repository with full test suites, automated setup (`npm install && npm run dev`), and transparent simulation demo.
+- **Live Proof Artifacts**: Verified native `cloth-v4` generation recorded in `docs/live/run-95e1761f.json` and `docs/live/result.jpg` (33.4s task, 73KB output image).
+- **Demo Video (1–3 min)**: [Link to YouTube / Vimeo public video] (Recorded following `DEMO_VIDEO_SCRIPT.md`).

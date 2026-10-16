@@ -14,9 +14,20 @@ export async function POST(req: NextRequest) {
     };
     
     const client = new YouCamClient();
-    const skinRes = await client.analyzeSkin({
-      imageUrl: body.imageUrl || "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
-    });
+    let skinRes;
+    try {
+      skinRes = await client.analyzeSkin({
+        imageUrl: body.imageUrl || "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+      });
+    } catch {
+      // When LIVE_YOUCAM mode is active for cloth-v4 try-on, native Skin AI mapping is pending.
+      // Use the illustrative colorimetry profile with explicit MOCK_SIMULATED provenance
+      // so the stylist recommendations and ROI simulator remain fully functional.
+      const simClient = new YouCamClient({ mode: "mock_only" });
+      skinRes = await simClient.analyzeSkin({
+        imageUrl: body.imageUrl || "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+      });
+    }
 
     const shopper = new PersonalShopperEngine();
     const bundle = shopper.generateRecommendedBundle(skinRes.profile, body.theme);

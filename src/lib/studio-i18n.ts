@@ -63,7 +63,22 @@ const english: Record<string, string> = {
   "Taches · spots": "Spots", "Rides · wrinkles": "Wrinkles", "Cernes": "Dark circles", "Rougeurs": "Redness", "Sébum": "Oiliness", "Hydratation": "Moisture", "Fermeté": "Firmness", "Éclat": "Radiance", "Poches sous les yeux": "Eye bags",
   "100% Soie de mûrier 19mm certifiée Oeko-Tex": "100% 19mm mulberry silk, Oeko-Tex certified", "Satin de viscose lourd éco-responsable (240g/m²)": "Heavy eco-friendly viscose satin (240g/m²)", "100% Laine vierge double face 520g": "100% double-face virgin wool, 520g", "Drap de laine froide et lyocell stretch": "Cool wool and stretch lyocell", "Acétate italien Mazzucchelli biodégradable, verres UV400 Catégorie 3": "Biodegradable Italian acetate, UV400 category 3 lenses", "Argent 925 plaqué Or 18 carats 5 microns (Vermeil)": "925 silver with 5-micron 18k gold plating (vermeil)",
   "Standard :": "Standard:", "YouCam :": "YouCam:", "50 000": "50,000",
+  "Les accessoires sont disponibles en simulation uniquement ; leur contrat live reste à intégrer.": "Accessories are available in simulation only; live contract pending.",
+  "YouCam: la tâche VTO a échoué. Aucun résultat simulé substitué.": "YouCam: VTO task failed. No simulated result substituted.",
+  "Clé API YouCam manquante.": "Missing YouCam API key.",
+  "YouCam: serveur HTTPS requis.": "YouCam: HTTPS server required.",
+  "YouCam: fichier vide.": "YouCam: empty file.",
+  "YouCam: format de fichier non pris en charge.": "YouCam: unsupported file format.",
+  "YouCam: contrat de téléversement invalide.": "YouCam: invalid upload contract.",
+  "YouCam: URL de résultat absente.": "YouCam: missing result URL.",
+  "YouCam: image du vêtement requise.": "YouCam: garment image required.",
+  "Skin AI live non validé : mapping des résultats natifs requis. Aucune donnée de peau simulée n’est présentée comme réelle.": "Live Skin AI not validated: native mapping required. No simulated skin data presented as real.",
 };
 export function translate(text: string, language: Language): string {
-  return language === "en" ? english[text] ?? text : text;
+  if (language !== "en") return text;
+  if (english[text]) return english[text];
+  if (text.includes("Aucun repli en simulation")) {
+    return text.replace("Aucun repli en simulation.", "No simulation fallback.").replace("YouCam: statut applicatif", "YouCam: application status");
+  }
+  return text;
 }
