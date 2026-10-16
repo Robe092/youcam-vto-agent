@@ -24,7 +24,7 @@ The published submission deadline is 2 November 2026, 11:45 Eastern Time: **17:4
 | Working application applying at least one YouCam API | CLIENT VERIFIED; JUDGE FLOW PENDING | One actual cloth-v4 run through the application client; final browser recording and reviewer access still pending |
 | Consumer/e-commerce value | IMPLEMENTED IN PROTOTYPE | Guided shopping flow and explanation; impact is illustrative |
 | Functions match submitted claims | DRAFT CORRECTED | English/French drafts now state simulation and incomplete integrations |
-| Repository URL with code/assets/instructions | NOT VERIFIED | Local folder/ZIP is not a repository URL; no reviewer access confirmed |
+| Repository URL with code/assets/instructions | PASS | Public repository live at https://github.com/Robe092/youcam-vto-agent |
 | Working project access, free for judges | NOT VERIFIED | Local build only; no external access confirmed |
 | Public YouTube/Vimeo video, 1–3 minutes | NOT VERIFIED | English script only; no final exported/public video verified |
 | English text, video/testing instructions or translations | PARTIAL | English draft/README/interface prepared; final video and clean-install review pending |

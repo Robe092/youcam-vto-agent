@@ -51,7 +51,7 @@ Build on the verified clothing run; implement native Skin AI/color-tone mappings
 Next.js 15, React 19, TypeScript, Tailwind CSS, Lucide React, Zod, Node.js test runner, Puppeteer, Chrome, Perfect Corp YouCam API client.
 
 ## Required links — pending
-- Repository URL: NOT PROVIDED.
+- Repository URL: https://github.com/Robe092/youcam-vto-agent
 - Judge demo or test-build access: NOT VERIFIED.
 - Public YouTube or Vimeo video, 1–3 minutes: NOT PROVIDED.
 - Live proof: docs/live/run-95e1761f.json records PASS, with one generated image and qualitative visual review.
