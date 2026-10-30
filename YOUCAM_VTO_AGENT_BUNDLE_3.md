@@ -10,6 +10,22 @@
 - [SUBMISSION_DEVPOST.md](#file-SUBMISSION-DEVPOST-md)
 - [DEVPOST_FORM_EN.md](#file-DEVPOST-FORM-EN-md)
 - [DEMO_VIDEO_SCRIPT.md](#file-DEMO-VIDEO-SCRIPT-md)
+- [video/README.md](#file-video-README-md)
+- [video/NARRATION_EN.txt](#file-video-NARRATION-EN-txt)
+- [video/PLAN.json](#file-video-PLAN-json)
+- [video/verification/MEDIA_CHECK.json](#file-video-verification-MEDIA-CHECK-json)
+- [video/verification/DECODE_CHECK.json](#file-video-verification-DECODE-CHECK-json)
+- [video/verification/REVIEW.json](#file-video-verification-REVIEW-json)
+- [video/voice-v2/README.md](#file-video-voice-v2-README-md)
+- [video/voice-v2/SYNC_LEDGER.json](#file-video-voice-v2-SYNC-LEDGER-json)
+- [video/voice-v2/REVIEW.json](#file-video-voice-v2-REVIEW-json)
+- [video/subtitles-v3/README.md](#file-video-subtitles-v3-README-md)
+- [video/subtitles-v3/YouCam-English-v3.srt](#file-video-subtitles-v3-YouCam-English-v3-srt)
+- [video/subtitles-v3/MEDIA_CHECK.json](#file-video-subtitles-v3-MEDIA-CHECK-json)
+- [video/motion-v4/README.md](#file-video-motion-v4-README-md)
+- [video/motion-v4/NARRATION_EN_V4.txt](#file-video-motion-v4-NARRATION-EN-V4-txt)
+- [video/motion-v4/YouCam-English-v4.srt](#file-video-motion-v4-YouCam-English-v4-srt)
+- [video/motion-v4/REVIEW.json](#file-video-motion-v4-REVIEW-json)
 - [package.json](#file-package-json)
 - [tsconfig.json](#file-tsconfig-json)
 - [tailwind.config.ts](#file-tailwind-config-ts)
@@ -308,57 +324,1238 @@ Next.js 15, React 19, TypeScript, Tailwind CSS, Lucide React, Zod, Node.js test 
 ## 📄 Fichier : `DEMO_VIDEO_SCRIPT.md`
 
 ```markdown
-# English recording plan — target 2 minutes 15 seconds
+# YouCam — current demo video v4
 
-Status: SCRIPT ONLY, not an exported final video.
-Do not submit a video claiming live YouCam integration until a real result is obtained and visually reviewed.
+**Current local export:** `video/renders/YouCam-Demo-v4-INTERACTIVE.mp4` — 109.500 seconds (about 1:50), Full HD H.264, 12 fps, English voice and 38 burnt-in English captions.
 
-## Before recording
-Use the final build in English, with mode labels visible. Insert provider footage only after docs/live/STATUS.json reports success and the image has been inspected. Never show keys or signed URLs. Do not imply that separate recordings are one continuous API execution.
+The opening and saved native Clothes API proof are retained through 0:39. The shopping walkthrough now uses twelve timestamped captures of actual browser interaction, replacing the still-per-topic v1–v3 approach. The method reconstructs native CUA frame sequences, sampled at a variable rate; it is not a native 30-fps screen recording.
 
-## 0:00–0:20 — Problem and product
-Show the English overview.
+The original ElevenLabs voice is retained at natural speed with three whole-sentence cuts. The current narration is [video/motion-v4/NARRATION_EN_V4.txt](video/motion-v4/NARRATION_EN_V4.txt). Captions: [video/motion-v4/YouCam-English-v4.srt](video/motion-v4/YouCam-English-v4.srt).
 
-“Choosing clothes online involves uncertainty about appearance and color. YouCam VTO Studio explores a fitting-room and personal-shopping experience, clearly separating simulated demonstrations from provider results.”
+| Current time | Scene |
+| --- | --- |
+| 0:00–0:12 | Product introduction and overview |
+| 0:12–0:39 | Official source and reference samples, actual saved cloth-v4 output and comparison |
+| 0:39–0:48 | 03 / START WITH A PHOTO |
+| 0:48–0:54 | 04 / CHOOSE AND CUSTOMIZE |
+| 0:54–0:58 | 05 / COMPARE THE PROFILES |
+| 0:58–1:03 | 05 / EXPLORE YOUR COLOR MATCH |
+| 1:03–1:08 | 05 / EXPLORE THE CUT |
+| 1:08–1:10 | 05 / EXPLAIN THE SCORES |
+| 1:09–1:19 | 06 / BUILD A COORDINATED LOOK |
+| 1:19–1:23 | 07 / EXPLORE THE BUSINESS SCENARIO |
+| 1:23–1:26 | 07 / CHANGE THE ORDER VOLUME |
+| 1:26–1:33 | 07 / INSPECT THE FORMULA |
+| 1:33–1:37 | 08 / PREVIEW THE BEAUTY PROFILE |
+| 1:37–1:41 | 09 / FOLLOW THE GUIDED DEMO |
+| 1:41–1:50 | Product conclusion |
 
-## 0:20–0:55 — Guided experience
-Use Judge demo. Compare Emma/Lucas, select the coat and change color/cut.
+## Scope and evidence
 
-“These fixture profiles demonstrate the shopping flow. Illustrations match the garment and selected color. They are not generated images of the person. Our local engine ranks items using color-affinity rules.”
+The native API proof is the previously verified client/API task from 16 October 2026, shown as recorded evidence. The UI takes were captured separately in explicit simulation mode. They include the photo dialog, catalog filters, profile change, color and fit controls, score explanation, bundle, annual-volume changes, assumptions, skin preview and jury guide. The volume range uses pointer focus and keyboard arrows. No new provider task was launched.
 
-## 0:55–1:25 — Real API evidence
-Required before final recording. Use actual verified clothing-run footage, showing the result, LIVE_YOUCAM and unavailable scores.
+The ranking engine uses profile undertone; the video does not claim that all eleven cosmetic scores drive the ranking. Business figures remain an illustrative internal model. Full integration limits remain documented in the project README and readiness inventory.
 
-After verification:
-“This image was returned by Perfect Corp's Clothes Virtual Try-On API. The server submits source and reference images, then polls the clothing task. The API does not return our demonstration scores, so they are unavailable.”
+## Verification
 
-If blocked, a draft may instead say:
-“The sponsor execution is pending an API key. This recording is a simulation walkthrough and does not prove live integration.”
+All 1,314 video frames and the complete audio stream decode. All 38 captions are rendered and match the 268 retained script words. Every temporal take shows actual UI-state pixel changes. Audio matches the declared three-cut edit with correlation above 0.99998. Scene frames were visually reviewed, including profile selection and volume controls at full size.
 
-## 1:25–1:50 — Recommendations and skin boundaries
-Show Stylist Look and Skin in simulation.
+See [video/motion-v4/README.md](video/motion-v4/README.md) and [video/motion-v4/REVIEW.json](video/motion-v4/REVIEW.json). Earlier visual/voice/subtitled versions and raw takes are preserved. Public hosting and final submission remain pending.
+```
 
-“The local recommendation and pricing engine creates a coordinated bundle. The eleven-dimension skin report currently uses fixtures. Native Skin AI and color-profile mappings remain to be completed and verified.”
+---
 
-Change this statement only after those features are implemented and proved.
+<a id="file-video-README-md"></a>
+## 📄 Fichier : `video/README.md`
 
-## 1:50–2:10 — Business scenario
-Open A/B Impact, move the slider and open View assumptions.
+```markdown
+> **Current version: renders/YouCam-Demo-v4-INTERACTIVE.mp4 (1:49.5), with recorded interactions and 38 English captions. See motion-v4/README.md. Earlier versions below are preserved history.**
 
-“This is an illustrative scenario, not a measured business result. It combines basket revenue differences and avoided return-processing costs. Margins, API and operating costs are excluded. The slider performs local arithmetic without another provider task.”
+# YouCam — first visual edit
 
-## 2:10–2:15 — Closing
-Show the project name and verified reviewer URL when available.
+Local review version: **YouCam-Visual-v1-SILENT.mp4**, 2:18, 1920 × 1080, H.264, 12 fps. No audio or music. English titles and short editorial captions; full speech subtitles have not been added.
 
-“Our goal is to make shopping decisions easier to understand, with transparent evidence behind each capability.”
+The owner requested the same two-stage workflow as PayFlow and Life After Code: review the silent visual edit first, then supply an ElevenLabs voice file. Preserve this export; fit a new version to the supplied voice rather than overwriting it.
 
-## Export checks
-- Exported duration: 1–3 minutes.
-- Legible controls and mode labels.
-- English narration/subtitles or required translations.
-- Footage and written claims match actual behavior.
-- No restricted music or other unlicensed material.
-- Review before publishing to YouTube/Vimeo and submitting its link.
+## Material and truthfulness
+
+- `raw/`: original CUA browser captures, captured on 17 October 2026 from the actual English interface at localhost:3000. Server explicitly forced to `YOUCAM_MODE=mock_only`; no new provider tasks were created for the video.
+- Native API scenes use the saved official sample inputs and actual `cloth-v4` output in `../docs/live/`. Proof date: 16 October 2026; one completed task, 33.474 seconds. These are separately recorded artifacts, not a continuous browser run. The video labels them accordingly.
+- Shopping, scores and Skin AI preview are explicitly labeled simulation. Product drawings are local illustrations, not native generated try-ons. The shopper uses local rules. Commercial figures are internal assumptions, without measured business gains.
+- No provider console, account details, API key, signed result URL, or personal uploads appear in the capture set.
+- This is a local visual review artifact. Public upload, final narrated export, asset redistribution rights review, and the final submission remain separate steps.
+
+## Reproduce and review
+
+`prepare.py` creates the continuous 18-scene timeline in `PLAN.json` and the asset hashes in `PROVENANCE.json`. Crops and optical reframing preserve the captured UI content; no fake UI interaction or fake live processing is generated.
+
+Renderer: adapted from the owner's `deliverables/gitlab-sentinel-video/render.swift`, using the established local AVFoundation PayFlow/Sentinel workflow. Other projects were read only.
+
+From this project's directory:
+
+```sh
+python3 video/prepare.py
+swiftc -module-cache-path /tmp/youcam-swift-module-cache video/render.swift -o video/render
+video/render video
+swiftc -module-cache-path /tmp/youcam-swift-module-cache video/verify.swift -o video/verify
+video/verify video
+swiftc -module-cache-path /tmp/youcam-swift-module-cache video/decode.swift -o video/decode
+video/decode video/renders/YouCam-Visual-v1-SILENT.mp4 video/verification/DECODE_CHECK.json
+```
+
+The native encoder requires normal macOS encoder access. The first sandboxed attempt failed before encoding and left a zero-byte file, preserved as `verification/failed-sandbox-encode.mp4`. The actual export uses the native encoder with local execution authorization. No media is uploaded.
+
+Verification outputs: `verification/MEDIA_CHECK.json`, `verification/DECODE_CHECK.json`, 18 extracted scene frames and `verification/contact-sheet.jpg`. Read those results before claiming media validation.
+
+## Voice stage
+
+`NARRATION_EN.txt` is the continuous English voice draft to paste into ElevenLabs. It is a draft for this edit, not synthesized audio. The final scene lengths should be fitted to the actual supplied voice; do not simply stretch or truncate the narration. Suggested delivery: clear, calm, conversational, about 135–145 words per minute.
+
+`PLAN.json` is the authoritative visual timing. The source export intentionally has zero audio tracks.
+
+## Supplied voice synchronized — v2
+
+The owner supplied the ElevenLabs Jerry B. recording. The synchronized export is renders/YouCam-Voice-v2.mp4 (120.750 seconds). The entire continuous voice is preserved at natural speed. All 1,449 video frames and the audio decode, and all 18 scene midpoint frames have been reviewed. See voice-v2/README.md and voice-v2/REVIEW.json. V1 remains available. Public hosting and full speech subtitles remain pending.
+
+## English captions — v3
+
+Latest review export: renders/YouCam-English-v3-SUBTITLED.mp4, 120.750 seconds. Forty-three English captions cover the complete 297-word voice draft. A dedicated footer replaces the former editorial captions, without resizing the UI. Audio packets are identical to v2. All frames and audio decode; all 43 captions were checked. The SRT is subtitles-v3/YouCam-English-v3.srt. See subtitles-v3/README.md. Public hosting remains pending.
+```
+
+---
+
+<a id="file-video-NARRATION-EN-txt"></a>
+## 📄 Fichier : `video/NARRATION_EN.txt`
+
+```text
+Meet YouCam VTO Studio: a more personal way to explore your style.
+
+The experience brings a virtual fitting room, a curated catalog and explained recommendations into one workspace.
+
+First, the real API evidence. These official sample images provide a source person and a reference outfit to the YouCam Clothes API.
+
+Here is the actual generated result. One successful cloth-v4 task took about thirty-three seconds. The reference jacket, red top, patterned jeans and boots appear on the source person.
+
+This comparison shows the saved inputs and output. It is qualitative evidence from a recorded API execution.
+
+Now, the interactive shopping walkthrough. Its simulation label stays explicit. Start with an example profile, upload a photo, or enter an image link.
+
+Filter the collection, choose a garment, and explore its colors, size and cut.
+
+Switching from Emma to Lucas changes the undertone profile and the recommendation.
+
+For the cool profile, charcoal increases the illustrated color harmony.
+
+Changing to a relaxed cut updates the garment illustration and demo fit indicator.
+
+Each score has an explanation. These simulated indicators do not measure the person in the photo.
+
+The personal shopper moves from one item to a coordinated look. Local rules rank colors by undertone affinity, explain the selection and display an itemized bundle price.
+
+The impact tab lets a merchant explore a business scenario. Change the annual order volume and the modeled benefit recalculates.
+
+Open the assumptions to inspect basket revenue and avoided return costs. These are internal demo inputs. The projection excludes unmodeled costs and is not a measured profit claim.
+
+The skin tab previews eleven cosmetic dimensions using simulated data. Live Skin AI mapping remains incomplete.
+
+A guided walkthrough helps judges explore the English interface quickly.
+
+YouCam VTO Studio combines verified Clothes API evidence, explained shopping choices and transparent assumptions.
+```
+
+---
+
+<a id="file-video-PLAN-json"></a>
+## 📄 Fichier : `video/PLAN.json`
+
+```json
+{
+  "duration_seconds": 138,
+  "fps": 12,
+  "width": 1920,
+  "height": 1080,
+  "scenes": [
+    {
+      "start": 0,
+      "end": 5,
+      "title": "YOUCAM VTO STUDIO",
+      "caption": "Skin AI & eCommerce VTO Hackathon \u00b7 Perfect Corp",
+      "card": "INTRO",
+      "tag": "PRODUCT DEMO"
+    },
+    {
+      "start": 5,
+      "end": 12,
+      "title": "01 / ONE CONNECTED SHOPPING EXPERIENCE",
+      "caption": "A fitting room, a curated collection and explained recommendations.",
+      "image": "raw/01-studio.jpg",
+      "tag": "SIMULATION UI"
+    },
+    {
+      "start": 12,
+      "end": 21,
+      "title": "02 / REAL YOUCAM CLOTHES API",
+      "caption": "Official sample images \u00b7 recorded API execution, 16 October 2026.",
+      "card": "INPUTS",
+      "tag": "RECORDED API PROOF"
+    },
+    {
+      "start": 21,
+      "end": 35,
+      "title": "02 / THE ACTUAL GENERATED RESULT",
+      "caption": "YouCam cloth-v4 output \u00b7 saved from one successful native API task.",
+      "card": "RESULT",
+      "tag": "RECORDED API PROOF"
+    },
+    {
+      "start": 35,
+      "end": 42,
+      "title": "02 / COMPARE THE EVIDENCE",
+      "caption": "Source + reference \u2192 generated output. Qualitative visual inspection, without accuracy certification.",
+      "card": "COMPARE",
+      "tag": "RECORDED API PROOF"
+    },
+    {
+      "start": 42,
+      "end": 49,
+      "title": "03 / START WITH A PHOTO",
+      "caption": "Local upload or direct image URL. This walkthrough uses explicit simulation mode.",
+      "image": "raw/03-photo-dialog.jpg",
+      "crop": [
+        410,
+        265,
+        455,
+        570
+      ],
+      "headline": "A familiar\nfirst step.",
+      "detail": "Choose a portrait, or start with an example profile.",
+      "tag": "SIMULATION UI"
+    },
+    {
+      "start": 49,
+      "end": 55,
+      "title": "04 / FIND THE RIGHT PIECE",
+      "caption": "Browse six demo products, filter categories and select a garment.",
+      "image": "raw/15-coat-warm.jpg",
+      "crop": [
+        463,
+        330,
+        385,
+        455
+      ],
+      "headline": "Choose.\nCustomize.\nCompare.",
+      "detail": "Category filters, color swatches, size and cut in one panel.",
+      "tag": "SIMULATION UI"
+    },
+    {
+      "start": 55,
+      "end": 61,
+      "title": "05 / PERSONALIZE THE EXPERIENCE",
+      "caption": "Emma: warm undertone. Lucas: cool undertone. Local recommendation rules update the selection.",
+      "image": "raw/05-coat-lucas.jpg",
+      "crop": [
+        25,
+        330,
+        825,
+        700
+      ],
+      "tag": "SIMULATION UI"
+    },
+    {
+      "start": 61,
+      "end": 67,
+      "title": "05 / COLOR CHANGES THE MATCH",
+      "caption": "Slate Charcoal raises the illustrated color affinity for the cool profile.",
+      "image": "raw/06-charcoal.jpg",
+      "crop": [
+        25,
+        330,
+        825,
+        700
+      ],
+      "tag": "SIMULATION UI"
+    },
+    {
+      "start": 67,
+      "end": 73,
+      "title": "05 / EXPLORE THE CUT",
+      "caption": "Regular \u2192 relaxed. The illustration and demo fit indicator respond to the controls.",
+      "image": "raw/07-relaxed.jpg",
+      "crop": [
+        25,
+        330,
+        825,
+        700
+      ],
+      "tag": "SIMULATION UI"
+    },
+    {
+      "start": 73,
+      "end": 79,
+      "title": "05 / EXPLAIN EVERY SCORE",
+      "caption": "Simulation scores illustrate the flow; they do not measure the uploaded person.",
+      "image": "raw/08-score-provenance.jpg",
+      "crop": [
+        28,
+        680,
+        420,
+        430
+      ],
+      "headline": "Visible scores.\nVisible context.",
+      "detail": "Fidelity, fit and harmony have an explanation. No body measurements are inferred in this demo.",
+      "tag": "SIMULATION UI"
+    },
+    {
+      "start": 79,
+      "end": 91,
+      "title": "06 / MOVE FROM ONE PIECE TO A LOOK",
+      "caption": "The personal shopper ranks catalog colors by undertone affinity and explains the bundle.",
+      "image": "raw/09-stylist.jpg",
+      "crop": [
+        863,
+        335,
+        380,
+        680
+      ],
+      "headline": "An outfit,\nwith a reason.",
+      "detail": "A coordinated bundle, itemized prices and a clear total. Powered by local recommendation rules.",
+      "tag": "SIMULATION UI"
+    },
+    {
+      "start": 91,
+      "end": 99,
+      "title": "07 / EXPLORE A BUSINESS SCENARIO",
+      "caption": "A/B Impact is an internal model, not a measured commercial result.",
+      "image": "raw/10-roi-10000.jpg",
+      "crop": [
+        863,
+        335,
+        380,
+        740
+      ],
+      "headline": "What could\nthe impact be?",
+      "detail": "Start with 10,000 annual orders. Read the result as a scenario.",
+      "tag": "ILLUSTRATIVE MODEL"
+    },
+    {
+      "start": 99,
+      "end": 105,
+      "title": "07 / CHANGE THE ANNUAL VOLUME",
+      "caption": "10,000 \u2192 4,000 orders. The modeled benefit recalculates locally.",
+      "image": "raw/11-roi-volume.jpg",
+      "crop": [
+        863,
+        335,
+        380,
+        740
+      ],
+      "headline": "Change one\nassumption.",
+      "detail": "The annual volume slider makes the scenario interactive.",
+      "tag": "ILLUSTRATIVE MODEL"
+    },
+    {
+      "start": 105,
+      "end": 117,
+      "title": "07 / OPEN THE ASSUMPTIONS",
+      "caption": "API, acquisition, margin and operating costs are excluded. This is not accounting net profit.",
+      "image": "raw/12-roi-assumptions.jpg",
+      "crop": [
+        870,
+        1030,
+        365,
+        600
+      ],
+      "headline": "The numbers\nare inspectable.",
+      "detail": "Basket revenue and avoided return costs are disclosed. All inputs are internal demo assumptions.",
+      "tag": "ILLUSTRATIVE MODEL"
+    },
+    {
+      "start": 117,
+      "end": 124,
+      "title": "08 / A CLEAR SKIN DEMO BOUNDARY",
+      "caption": "Eleven cosmetic dimensions are shown from fixtures. Live Skin AI mapping remains incomplete.",
+      "image": "raw/13-skin.jpg",
+      "crop": [
+        865,
+        335,
+        380,
+        740
+      ],
+      "headline": "11 dimensions.\nClear provenance.",
+      "detail": "A simulated beauty profile. Cosmetic information, without a medical diagnosis.",
+      "tag": "SIMULATION UI"
+    },
+    {
+      "start": 124,
+      "end": 131,
+      "title": "09 / BUILT FOR A QUICK JURY WALKTHROUGH",
+      "caption": "An English interface and a three-step guide make the project easy to explore.",
+      "image": "raw/16-judge-guide.jpg",
+      "crop": [
+        0,
+        0,
+        1275,
+        740
+      ],
+      "tag": "SIMULATION UI"
+    },
+    {
+      "start": 131,
+      "end": 138,
+      "title": "YOUCAM VTO STUDIO",
+      "caption": "Real Clothes API evidence. Explained shopping decisions. Transparent assumptions.",
+      "card": "OUTRO",
+      "tag": "END OF VISUAL EDIT"
+    }
+  ]
+}
+```
+
+---
+
+<a id="file-video-verification-MEDIA-CHECK-json"></a>
+## 📄 Fichier : `video/verification/MEDIA_CHECK.json`
+
+```json
+{
+  "audio_tracks" : 0,
+  "duration_seconds" : 138,
+  "height" : 1080,
+  "representative_frames_extracted" : 18,
+  "status" : "PASS",
+  "video_fps" : 12,
+  "video_tracks" : 1,
+  "width" : 1920
+}
+```
+
+---
+
+<a id="file-video-verification-DECODE-CHECK-json"></a>
+## 📄 Fichier : `video/verification/DECODE_CHECK.json`
+
+```json
+{
+  "decoded_video_frames" : 1656,
+  "status" : "DECODE_COMPLETE"
+}
+```
+
+---
+
+<a id="file-video-verification-REVIEW-json"></a>
+## 📄 Fichier : `video/verification/REVIEW.json`
+
+```json
+{
+  "checkedAt": "2026-10-17T11:34:00.922410+00:00",
+  "status": "PASS_LOCAL_VISUAL_EDIT",
+  "export": "renders/YouCam-Visual-v1-SILENT.mp4",
+  "sha256": "6933ed304a5e483acf7bce25d397161f0f551ed71e51cbf2bf2a868c2e5d33be",
+  "bytes": 30417607,
+  "fullDecodeFrames": 1656,
+  "sceneFramesInspected": 18,
+  "visualReview": "All scene midpoint frames reviewed in contact sheet; recommendation and assumptions reviewed full size. Clear editorial labels distinguish recorded API evidence from simulation.",
+  "voiceStatus": "PENDING_USER_ELEVENLABS_FILE",
+  "publication": "NOT_UPLOADED"
+}
+```
+
+---
+
+<a id="file-video-voice-v2-README-md"></a>
+## 📄 Fichier : `video/voice-v2/README.md`
+
+```markdown
+# YouCam — synchronized voice edit v2
+
+Export: `../renders/YouCam-Voice-v2.mp4` — 120.750 seconds (about 2:01), H.264 Full HD, 12 fps, AAC mono 48 kHz.
+
+Voice: the owner's supplied ElevenLabs Jerry B. MP3, preserved locally as `source-jerry-youcam.mp3`. It is used in full, continuously, at natural speed. No speech trimming, tempo change, pitch change or inserted pauses. Only AAC transcoding and 1.501 seconds of silence after the end of the original audio. No music. The silent v1 and original MP3 remain intact.
+
+All 18 visual scenes have been fitted to the spoken topics, using local word timestamps. `SYNC_LEDGER.json` records each source interval, new interval and spoken anchor. Only the edited screenshots and optical reframing change duration. The recorded native API proof and explicit simulation labels are preserved.
+
+Processing is entirely local: FFmpeg for decoding/editing, faster-whisper base.en for word timestamps. The recognition model was downloaded; the user's audio was not uploaded. The initial PyAV 19 metadata-argument incompatibility was resolved by passing locally decoded PCM samples to the transcriber. ASR approximations of product names are not treated as speech defects or burnt into captions.
+
+## Checks
+
+- All 1,449 video frames and the full audio track decode successfully.
+- 18 representative scene frames extracted and visually reviewed in a contact sheet.
+- Audio waveform correlation with the complete source: 0.9999758 after AAC re-encoding, with no time offset.
+- Source audio: 119.249 seconds. Final export: 120.750 seconds. Tail padding is silent.
+- Final audio peak: −5.91 dBFS; no digital clipping detected.
+- No full speech subtitles have been added. Existing editorial captions remain visible.
+- No upload, publication or new provider generation.
+
+These checks establish technical suitability and synchronization. The owner's preferred voice tone remains a listening preference. No rerecording is technically required for timing.
+
+Reports: `REVIEW.json`, `AUDIO_ANALYSIS.txt`, `DECODE_CHECK.txt`. Reproduce with `analyze.py`, `assemble.py`, `verify.py` in a Python environment containing imageio-ffmpeg, faster-whisper, numpy, av and Pillow. Export scripts preserve existing output versions.
+```
+
+---
+
+<a id="file-video-voice-v2-SYNC-LEDGER-json"></a>
+## 📄 Fichier : `video/voice-v2/SYNC_LEDGER.json`
+
+```json
+{
+  "duration": 120.75,
+  "audio_duration": 119.249,
+  "audio_speed": 1,
+  "audio_continuous": true,
+  "audio_trimmed": false,
+  "tail_padding_seconds": 1.5010000000000048,
+  "segments": [
+    {
+      "scene": 0,
+      "title": "YOUCAM VTO STUDIO",
+      "start": 0.0,
+      "end": 5.833333333333333,
+      "spoken_anchor": null,
+      "source_start": 0,
+      "source_end": 5
+    },
+    {
+      "scene": 1,
+      "title": "01 / ONE CONNECTED SHOPPING EXPERIENCE",
+      "start": 5.833333333333333,
+      "end": 12.416666666666666,
+      "spoken_anchor": "The experience brings",
+      "source_start": 5,
+      "source_end": 12
+    },
+    {
+      "scene": 2,
+      "title": "02 / REAL YOUCAM CLOTHES API",
+      "start": 12.416666666666666,
+      "end": 21.083333333333332,
+      "spoken_anchor": "First the real",
+      "source_start": 12,
+      "source_end": 21
+    },
+    {
+      "scene": 3,
+      "title": "02 / THE ACTUAL GENERATED RESULT",
+      "start": 21.083333333333332,
+      "end": 32.25,
+      "spoken_anchor": "Here is the actual",
+      "source_start": 21,
+      "source_end": 35
+    },
+    {
+      "scene": 4,
+      "title": "02 / COMPARE THE EVIDENCE",
+      "start": 32.25,
+      "end": 39.0,
+      "spoken_anchor": "This comparison shows",
+      "source_start": 35,
+      "source_end": 42
+    },
+    {
+      "scene": 5,
+      "title": "03 / START WITH A PHOTO",
+      "start": 39.0,
+      "end": 48.833333333333336,
+      "spoken_anchor": "Now the interactive",
+      "source_start": 42,
+      "source_end": 49
+    },
+    {
+      "scene": 6,
+      "title": "04 / FIND THE RIGHT PIECE",
+      "start": 48.833333333333336,
+      "end": 54.25,
+      "spoken_anchor": "Filter the collection",
+      "source_start": 49,
+      "source_end": 55
+    },
+    {
+      "scene": 7,
+      "title": "05 / PERSONALIZE THE EXPERIENCE",
+      "start": 54.25,
+      "end": 58.25,
+      "spoken_anchor": "Switching from Emma",
+      "source_start": 55,
+      "source_end": 61
+    },
+    {
+      "scene": 8,
+      "title": "05 / COLOR CHANGES THE MATCH",
+      "start": 58.25,
+      "end": 63.416666666666664,
+      "spoken_anchor": "For the cool",
+      "source_start": 61,
+      "source_end": 67
+    },
+    {
+      "scene": 9,
+      "title": "05 / EXPLORE THE CUT",
+      "start": 63.416666666666664,
+      "end": 68.25,
+      "spoken_anchor": "Changing to a relaxed",
+      "source_start": 67,
+      "source_end": 73
+    },
+    {
+      "scene": 10,
+      "title": "05 / EXPLAIN EVERY SCORE",
+      "start": 68.25,
+      "end": 74.08333333333333,
+      "spoken_anchor": "Each score has",
+      "source_start": 73,
+      "source_end": 79
+    },
+    {
+      "scene": 11,
+      "title": "06 / MOVE FROM ONE PIECE TO A LOOK",
+      "start": 74.08333333333333,
+      "end": 84.0,
+      "spoken_anchor": "The personal shopper",
+      "source_start": 79,
+      "source_end": 91
+    },
+    {
+      "scene": 12,
+      "title": "07 / EXPLORE A BUSINESS SCENARIO",
+      "start": 84.0,
+      "end": 87.16666666666667,
+      "spoken_anchor": "The Impact tab",
+      "source_start": 91,
+      "source_end": 99
+    },
+    {
+      "scene": 13,
+      "title": "07 / CHANGE THE ANNUAL VOLUME",
+      "start": 87.16666666666667,
+      "end": 91.0,
+      "spoken_anchor": "Change the annual",
+      "source_start": 99,
+      "source_end": 105
+    },
+    {
+      "scene": 14,
+      "title": "07 / OPEN THE ASSUMPTIONS",
+      "start": 91.0,
+      "end": 101.75,
+      "spoken_anchor": "Open the assumptions",
+      "source_start": 105,
+      "source_end": 117
+    },
+    {
+      "scene": 15,
+      "title": "08 / A CLEAR SKIN DEMO BOUNDARY",
+      "start": 101.75,
+      "end": 108.66666666666667,
+      "spoken_anchor": "The skin tab",
+      "source_start": 117,
+      "source_end": 124
+    },
+    {
+      "scene": 16,
+      "title": "09 / BUILT FOR A QUICK JURY WALKTHROUGH",
+      "start": 108.66666666666667,
+      "end": 112.58333333333333,
+      "spoken_anchor": "A guided walkthrough",
+      "source_start": 124,
+      "source_end": 131
+    },
+    {
+      "scene": 17,
+      "title": "YOUCAM VTO STUDIO",
+      "start": 112.58333333333333,
+      "end": 120.75,
+      "spoken_anchor": "YouCam VTO Studio combines",
+      "source_start": 131,
+      "source_end": 138
+    }
+  ]
+}
+```
+
+---
+
+<a id="file-video-voice-v2-REVIEW-json"></a>
+## 📄 Fichier : `video/voice-v2/REVIEW.json`
+
+```json
+{
+  "duration_seconds": 120.75,
+  "width": 1920,
+  "height": 1080,
+  "fps": 12.0,
+  "audio_codec": "aac",
+  "audio_sample_rate": 48000,
+  "status": "PASS",
+  "full_audio_video_decode": true,
+  "decoded_video_frames": 1449,
+  "source_audio_seconds": 119.249,
+  "audio_speed": 1,
+  "audio_continuous": true,
+  "audio_trimmed": false,
+  "audio_waveform_correlation": 0.9999758286229664,
+  "tail_peak": 0.0,
+  "peak_level_db": -5.91266,
+  "representative_frames": 18,
+  "subtitles_burned": false,
+  "published": false,
+  "remote_audio_upload": false,
+  "sha256": "90e889944607b68c31f9a84c2ebfe3aa7ce72e0f0fb40869808adcde6958bd74"
+}
+```
+
+---
+
+<a id="file-video-subtitles-v3-README-md"></a>
+## 📄 Fichier : `video/subtitles-v3/README.md`
+
+```markdown
+# YouCam — English subtitled edit v3
+
+Export: `../renders/YouCam-English-v3-SUBTITLED.mp4` — 120.750 seconds (about 2:01), H.264 Full HD at 12 fps. Sidecar captions: `YouCam-English-v3.srt`. ASS styling source: `YouCam-English-v3.ass`.
+
+43 English captions cover all 297 words of the authored narration. The text is aligned back to `../NARRATION_EN.txt`, preventing ASR substitutions of names such as YouCam and Clothes API. The existing local word timestamps supply the timing; no new audio upload or generation. Script/ASR similarity: 0.96828. Captions use at most two lines and 42 characters per line, with a minimum display duration of 1.24 seconds.
+
+The existing editorial footer, below y=970, is replaced by a dedicated dark caption band. The original UI and imagery above that boundary retain their original size. Mode labels and the recorded-proof headings remain visible. This avoids overlapping narration subtitles with the previous editorial sentences. No visual scene timing is changed from v2.
+
+The AAC audio is copied directly from v2: compressed audio packet hashes are identical. There is no new encoding, speed change, cut, gain change or music. V1, V2 and the supplied MP3 remain preserved.
+
+## Validation
+
+- All 1,449 video frames and the entire audio stream decode successfully.
+- All 43 cues have visible subtitle pixels, within the dedicated caption band and safe horizontal margins.
+- Caption text preserves all authored words in order; no overlap between cues.
+- All 43 cue midpoint bands were reviewed in `verification/all-captions.jpg`; a full-size two-line example was also inspected.
+- Duration, 1920 × 1080 resolution and 12 fps verified.
+- No public upload or publication.
+
+Reports: `MEDIA_CHECK.json`, `ALL_CUES_CHECK.json`, `CAPTION_CUES.json`, `DECODE_LOG.txt`. Reproduce locally with `prepare.py`, `render.py`, `verify.py` using the same Python environment as v2. `alignment.py` is a local copy of the owner's existing exact-script caption alignment helper from the Sentinel video project; that source was read only. Only its local alignment helpers are called, without external transcription services.
+```
+
+---
+
+<a id="file-video-subtitles-v3-YouCam-English-v3-srt"></a>
+## 📄 Fichier : `video/subtitles-v3/YouCam-English-v3.srt`
+
+```text
+1
+00:00:00,000 --> 00:00:02,480
+Meet YouCam VTO Studio:
+
+2
+00:00:03,300 --> 00:00:05,280
+a more personal way to explore your style.
+
+3
+00:00:05,960 --> 00:00:08,040
+The experience brings
+a virtual fitting room,
+
+4
+00:00:08,260 --> 00:00:11,680
+a curated catalog and explained
+recommendations into one workspace.
+
+5
+00:00:12,540 --> 00:00:14,660
+First, the real API evidence.
+
+6
+00:00:15,400 --> 00:00:17,690
+These official sample images
+provide a source person
+
+7
+00:00:17,700 --> 00:00:20,300
+and a reference outfit to
+the YouCam Clothes API.
+
+8
+00:00:21,200 --> 00:00:22,840
+Here is the actual generated result.
+
+9
+00:00:23,520 --> 00:00:26,760
+One successful cloth-v4 task
+took about thirty-three seconds.
+
+10
+00:00:27,360 --> 00:00:29,790
+The reference jacket,
+red top, patterned jeans
+
+11
+00:00:29,800 --> 00:00:31,660
+and boots appear on the source person.
+
+12
+00:00:32,400 --> 00:00:34,940
+This comparison shows the
+saved inputs and output.
+
+13
+00:00:35,540 --> 00:00:38,300
+It is qualitative evidence
+from a recorded API execution.
+
+14
+00:00:39,100 --> 00:00:41,520
+Now, the interactive shopping walkthrough.
+
+15
+00:00:42,020 --> 00:00:43,960
+Its simulation label stays explicit.
+
+16
+00:00:44,480 --> 00:00:46,670
+Start with an example profile, upload
+
+17
+00:00:46,680 --> 00:00:48,480
+a photo, or enter an image link.
+
+18
+00:00:48,980 --> 00:00:50,860
+Filter the collection, choose a garment,
+
+19
+00:00:51,220 --> 00:00:53,740
+and explore its colors, size and cut.
+
+20
+00:00:54,340 --> 00:00:56,290
+Switching from Emma to Lucas changes
+
+21
+00:00:56,300 --> 00:00:58,390
+the undertone profile
+and the recommendation.
+
+22
+00:00:58,400 --> 00:01:03,100
+For the cool profile, charcoal
+increases the illustrated color harmony.
+
+23
+00:01:03,540 --> 00:01:05,210
+Changing to a relaxed cut updates
+
+24
+00:01:05,220 --> 00:01:07,600
+the garment illustration
+and demo fit indicator.
+
+25
+00:01:08,340 --> 00:01:09,580
+Each score has an explanation.
+
+26
+00:01:10,480 --> 00:01:12,170
+These simulated indicators do not
+
+27
+00:01:12,180 --> 00:01:13,500
+measure the person in the photo.
+
+28
+00:01:14,180 --> 00:01:15,730
+The personal shopper moves from one
+
+29
+00:01:15,740 --> 00:01:17,160
+item to a coordinated look.
+
+30
+00:01:17,560 --> 00:01:20,810
+Local rules rank colors by
+undertone affinity, explain
+
+31
+00:01:20,820 --> 00:01:23,380
+the selection and display
+an itemized bundle price.
+
+32
+00:01:24,120 --> 00:01:26,680
+The impact tab lets a merchant
+explore a business scenario.
+
+33
+00:01:27,280 --> 00:01:30,740
+Change the annual order volume and
+the modeled benefit recalculates.
+
+34
+00:01:31,160 --> 00:01:32,430
+Open the assumptions to inspect
+
+35
+00:01:32,440 --> 00:01:34,820
+basket revenue and avoided return costs.
+
+36
+00:01:35,620 --> 00:01:37,120
+These are internal demo inputs.
+
+37
+00:01:37,800 --> 00:01:39,550
+The projection excludes unmodeled costs
+
+38
+00:01:39,560 --> 00:01:41,260
+and is not a measured profit claim.
+
+39
+00:01:41,880 --> 00:01:45,500
+The skin tab previews eleven cosmetic
+dimensions using simulated data.
+
+40
+00:01:46,060 --> 00:01:47,980
+Live Skin AI mapping remains incomplete.
+
+41
+00:01:48,800 --> 00:01:51,960
+A guided walkthrough helps judges
+explore the English interface quickly.
+
+42
+00:01:52,720 --> 00:01:55,370
+YouCam VTO Studio combines
+verified Clothes API
+
+43
+00:01:55,380 --> 00:01:58,700
+evidence, explained shopping
+choices and transparent assumptions.
+```
+
+---
+
+<a id="file-video-subtitles-v3-MEDIA-CHECK-json"></a>
+## 📄 Fichier : `video/subtitles-v3/MEDIA_CHECK.json`
+
+```json
+{
+  "status": "PASS",
+  "duration_seconds": 120.75,
+  "width": 1920,
+  "height": 1080,
+  "fps": 12,
+  "decoded_video_frames": 1449,
+  "full_audio_video_decode": true,
+  "audio_packets_identical": true,
+  "caption_count": 43,
+  "all_cues_rendered": true,
+  "script_words": 297,
+  "caption_words": 297,
+  "script_similarity": 0.9682804674457429,
+  "maximum_lines": 2,
+  "caption_region": [
+    0,
+    970,
+    1920,
+    110
+  ],
+  "ui_resized": false,
+  "editorial_footer_replaced": true,
+  "published": false,
+  "remote_audio_upload": false,
+  "sha256": "cc30c6bdee54c7ebcd199cdcc94010abdc95bb5e4aaac8f5e05972dc5cb9a055"
+}
+```
+
+---
+
+<a id="file-video-motion-v4-README-md"></a>
+## 📄 Fichier : `video/motion-v4/README.md`
+
+```markdown
+# YouCam — interactive demo edit v4
+
+Current export: `../renders/YouCam-Demo-v4-INTERACTIVE.mp4`. Target: 109.500 seconds (about 1:50), Full HD H.264, 12 fps, AAC voice, English captions. Final validation is recorded in `REVIEW.json`.
+
+## What changed after the critique
+
+The earlier edit mainly used one still screenshot per topic. V4 retains the opening and the separately recorded genuine Clothes API proof through 0:39, then replaces the shopping walkthrough with twelve actual temporal browser takes. The original voice is reused at natural speed, with three complete sentences removed: the repeated scoring disclaimer, the final unmodeled-profit disclaimer, and the sentence saying live Skin AI remains incomplete. Their subtitles are removed too. The mode labels, simulated skin wording, local rule-based recommendation explanation, and disclosed ROI assumptions remain truthful.
+
+No assertion that all eleven skin scores drive the color-ranking engine is added: the actual code ranks catalog colors using the profile undertone.
+
+## Capture method, with its limits
+
+The same temporal image-sequence approach used in the owner's PayFlow workflow is used here: native CUA window screenshots are sampled continuously during real mouse/keyboard interaction, timestamped, and reconstructed as video. Actual cursor indications, UI transitions, dialog changes, page scrolling and changing values are present. No synthetic cursor path, fake browser UI, generated state transition, or Ken Burns movement is added to the interactive scenes.
+
+This is **not** a native ScreenCaptureKit/30-fps screen recording. The native recorder probe was refused by macOS TCC. The working CUA route uses its existing capture access and requires no change to the owner's screen-recording settings. Sampling cadence varies (roughly 2–8 frames/s); the output video is 12 fps. Some selected takes are shortened or slightly retimed to fit the spoken topic, and brief end holds are used. The recorded input order is preserved inside each take. The volume range is focused by pointer and then adjusted with keyboard arrows; it is not a mouse drag.
+
+`raw/manifest.json`, each take's `take.json`, `index.json`, and original PNGs retain the captured provenance. Failed `02-catalog` is preserved and excluded; `02b-catalog` is used. The first native recording permission probe and unsuccessful coordinate inputs are diagnostic attempts, not usable footage. No API key, provider console or personal upload is captured. Browser scenes show the actual local production application in explicitly forced mock mode. No new YouCam task was created.
+
+This is an edited demonstration made from separately recorded takes. It is not one uninterrupted API-backed browser run. The real cloth-v4 result is the previously verified artifact from 16 October 2026, clearly labeled recorded API evidence.
+
+## Assembly and voice
+
+`PLAN_V4.json` records each visual source, interval, retiming factor and caption. `NARRATION_EN_V4.txt` is the retained narration. `YouCam-English-v4.srt` and `.ass` are the revised captions. Three whole-sentence cuts are performed inside existing quiet boundaries; speech is never accelerated or pitch-shifted. There is no music.
+
+Two work exports failed timestamp verification and are excluded from delivery. The cause was heterogeneous pixel/range/aspect metadata across video segments, which reinitialized the combined audio/video filter graph. Intermediates now explicitly share square pixels, limited-range BT.709, pixel format and 12-fps output. Voice is assembled separately into a continuous PCM timeline before final muxing. The failed exports and intermediate attempts remain local for diagnosis.
+
+Reproduce with `prepare.py`, `render.py`, `verify.py` in the existing local media Python environment. `render.py` preserves existing exports. Raw takes and intermediate exports are retained locally and excluded from Git and the source bundle; the final MP4 is a separate deliverable.
+
+Review artifacts: `REVIEW.json`, `MOTION_CHECKS.json`, `CAPTION_CHECKS.json`, `verification/motion-scenes.jpg`, and full-size scene frames. Public hosting and final submission remain separate pending steps.
+```
+
+---
+
+<a id="file-video-motion-v4-NARRATION-EN-V4-txt"></a>
+## 📄 Fichier : `video/motion-v4/NARRATION_EN_V4.txt`
+
+```text
+Meet YouCam VTO Studio: a more personal way to explore your style.
+
+The experience brings a virtual fitting room, a curated catalog and explained recommendations into one workspace.
+
+First, the real API evidence. These official sample images provide a source person and a reference outfit to the YouCam Clothes API.
+
+Here is the actual generated result. One successful cloth-v4 task took about thirty-three seconds. The reference jacket, red top, patterned jeans and boots appear on the source person.
+
+This comparison shows the saved inputs and output. It is qualitative evidence from a recorded API execution.
+
+Now, the interactive shopping walkthrough. Its simulation label stays explicit. Start with an example profile, upload a photo, or enter an image link.
+
+Filter the collection, choose a garment, and explore its colors, size and cut.
+
+Switching from Emma to Lucas changes the undertone profile and the recommendation.
+
+For the cool profile, charcoal increases the illustrated color harmony.
+
+Changing to a relaxed cut updates the garment illustration and demo fit indicator.
+
+Each score has an explanation.
+
+The personal shopper moves from one item to a coordinated look. Local rules rank colors by undertone affinity, explain the selection and display an itemized bundle price.
+
+The impact tab lets a merchant explore a business scenario. Change the annual order volume and the modeled benefit recalculates.
+
+Open the assumptions to inspect basket revenue and avoided return costs. These are internal demo inputs.
+
+The skin tab previews eleven cosmetic dimensions using simulated data.
+
+A guided walkthrough helps judges explore the English interface quickly.
+
+YouCam VTO Studio combines verified Clothes API evidence, explained shopping choices and transparent assumptions.
+```
+
+---
+
+<a id="file-video-motion-v4-YouCam-English-v4-srt"></a>
+## 📄 Fichier : `video/motion-v4/YouCam-English-v4.srt`
+
+```text
+1
+00:00:00,000 --> 00:00:02,480
+Meet YouCam VTO Studio:
+
+2
+00:00:03,300 --> 00:00:05,280
+a more personal way to explore your style.
+
+3
+00:00:05,960 --> 00:00:08,040
+The experience brings
+a virtual fitting room,
+
+4
+00:00:08,260 --> 00:00:11,680
+a curated catalog and explained
+recommendations into one workspace.
+
+5
+00:00:12,540 --> 00:00:14,660
+First, the real API evidence.
+
+6
+00:00:15,400 --> 00:00:17,690
+These official sample images
+provide a source person
+
+7
+00:00:17,700 --> 00:00:20,300
+and a reference outfit to
+the YouCam Clothes API.
+
+8
+00:00:21,200 --> 00:00:22,840
+Here is the actual generated result.
+
+9
+00:00:23,520 --> 00:00:26,760
+One successful cloth-v4 task
+took about thirty-three seconds.
+
+10
+00:00:27,360 --> 00:00:29,790
+The reference jacket,
+red top, patterned jeans
+
+11
+00:00:29,800 --> 00:00:31,660
+and boots appear on the source person.
+
+12
+00:00:32,400 --> 00:00:34,940
+This comparison shows the
+saved inputs and output.
+
+13
+00:00:35,540 --> 00:00:38,300
+It is qualitative evidence
+from a recorded API execution.
+
+14
+00:00:39,100 --> 00:00:41,520
+Now, the interactive shopping walkthrough.
+
+15
+00:00:42,020 --> 00:00:43,960
+Its simulation label stays explicit.
+
+16
+00:00:44,480 --> 00:00:46,670
+Start with an example profile, upload
+
+17
+00:00:46,680 --> 00:00:48,480
+a photo, or enter an image link.
+
+18
+00:00:48,980 --> 00:00:50,860
+Filter the collection, choose a garment,
+
+19
+00:00:51,220 --> 00:00:53,740
+and explore its colors, size and cut.
+
+20
+00:00:54,340 --> 00:00:56,290
+Switching from Emma to Lucas changes
+
+21
+00:00:56,300 --> 00:00:58,390
+the undertone profile
+and the recommendation.
+
+22
+00:00:58,400 --> 00:01:03,100
+For the cool profile, charcoal
+increases the illustrated color harmony.
+
+23
+00:01:03,540 --> 00:01:05,210
+Changing to a relaxed cut updates
+
+24
+00:01:05,220 --> 00:01:07,600
+the garment illustration
+and demo fit indicator.
+
+25
+00:01:08,340 --> 00:01:09,580
+Each score has an explanation.
+
+26
+00:01:10,097 --> 00:01:11,647
+The personal shopper moves from one
+
+27
+00:01:11,657 --> 00:01:13,077
+item to a coordinated look.
+
+28
+00:01:13,477 --> 00:01:16,727
+Local rules rank colors by
+undertone affinity, explain
+
+29
+00:01:16,737 --> 00:01:19,297
+the selection and display
+an itemized bundle price.
+
+30
+00:01:20,037 --> 00:01:22,597
+The impact tab lets a merchant
+explore a business scenario.
+
+31
+00:01:23,197 --> 00:01:26,657
+Change the annual order volume and
+the modeled benefit recalculates.
+
+32
+00:01:27,077 --> 00:01:28,347
+Open the assumptions to inspect
+
+33
+00:01:28,357 --> 00:01:30,737
+basket revenue and avoided return costs.
+
+34
+00:01:31,537 --> 00:01:33,037
+These are internal demo inputs.
+
+35
+00:01:33,547 --> 00:01:37,167
+The skin tab previews eleven cosmetic
+dimensions using simulated data.
+
+36
+00:01:37,550 --> 00:01:40,710
+A guided walkthrough helps judges
+explore the English interface quickly.
+
+37
+00:01:41,470 --> 00:01:44,120
+YouCam VTO Studio combines
+verified Clothes API
+
+38
+00:01:44,130 --> 00:01:47,450
+evidence, explained shopping
+choices and transparent assumptions.
+```
+
+---
+
+<a id="file-video-motion-v4-REVIEW-json"></a>
+## 📄 Fichier : `video/motion-v4/REVIEW.json`
+
+```json
+{
+  "status": "PASS",
+  "duration": 109.5,
+  "width": 1920,
+  "height": 1080,
+  "fps": 12.0,
+  "audio_codec": "aac",
+  "decoded_video_frames": 1314,
+  "full_audio_video_decode": true,
+  "temporal_browser_takes": 12,
+  "source_capture_frames": 434,
+  "all_motion_takes_show_ui_state_changes": true,
+  "caption_count": 38,
+  "all_captions_rendered": true,
+  "caption_words": 268,
+  "audio_speed": 1,
+  "removed_whole_sentences": [
+    "These simulated indicators do not measure the person in the photo.",
+    "The projection excludes unmodeled costs and is not a measured profit claim.",
+    "Live Skin AI mapping remains incomplete."
+  ],
+  "audio_waveform_correlation_to_declared_edit": 0.9999865161574966,
+  "peak_dbfs": -6.379817962646484,
+  "native_screen_recorder": false,
+  "method": "Timestamped actual native CUA frame sequences, edited and reconstructed as video; frame sampling rate varies",
+  "native_youcam_generation_during_recording": false,
+  "published": false,
+  "remote_upload": false,
+  "sha256": "a95b12f118897013baa1b38867a9c6926a533b89bffa721d7459a271f8a47bfb"
+}
 ```
 
 ---
@@ -3660,6 +4857,22 @@ files_to_bundle = [
     'SUBMISSION_DEVPOST.md',
     'DEVPOST_FORM_EN.md',
     'DEMO_VIDEO_SCRIPT.md',
+    'video/README.md',
+    'video/NARRATION_EN.txt',
+    'video/PLAN.json',
+    'video/verification/MEDIA_CHECK.json',
+    'video/verification/DECODE_CHECK.json',
+    'video/verification/REVIEW.json',
+    'video/voice-v2/README.md',
+    'video/voice-v2/SYNC_LEDGER.json',
+    'video/voice-v2/REVIEW.json',
+    'video/subtitles-v3/README.md',
+    'video/subtitles-v3/YouCam-English-v3.srt',
+    'video/subtitles-v3/MEDIA_CHECK.json',
+    'video/motion-v4/README.md',
+    'video/motion-v4/NARRATION_EN_V4.txt',
+    'video/motion-v4/YouCam-English-v4.srt',
+    'video/motion-v4/REVIEW.json',
     'package.json',
     'tsconfig.json',
     'tailwind.config.ts',
@@ -3890,6 +5103,22 @@ The first connection used an obsolete configured host and failed DNS resolution.
 ## Successful native clothing run
 
 The earlier CreditInsufficiency refusal was resolved by activation of the contest units. One new task succeeded in 33.474 seconds. Its 73,094-byte image was retrieved and visually compared with source and reference images. The reference outfit was transferred to a visually consistent source person. The run is preserved in docs/live/run-95e1761f.json with hashes; docs/live/PROOF.md documents the scope. This is a client/API integration proof using public URLs, not a browser E2E recording or File API upload proof. No new generation was launched for visual verification.
+
+## Silent visual edit — 17 October 2026
+
+A local 2:18 Full HD silent MP4 is exported in video/renders/YouCam-Visual-v1-SILENT.mp4. All 1,656 video frames decode; 18 representative scene frames were inspected. Narration is pending the owner’s ElevenLabs audio. Public video hosting, final submission and external judge access remain pending. See video/README.md and video/verification/REVIEW.json. No new provider task was created for this edit.
+
+## Synchronized voice edit — 17 October 2026
+
+The owner’s ElevenLabs voice is now integrated into video/renders/YouCam-Voice-v2.mp4 (120.750 seconds). Full continuous source voice preserved at natural speed; all audio/video decode and 18 scene frames reviewed. See video/voice-v2/REVIEW.json. The previous silent-edit note describes v1. Public hosting, final submission and external judge access still remain pending.
+
+## English captions completed — 17 October 2026
+
+The local narrated and subtitled edit is video/renders/YouCam-English-v3-SUBTITLED.mp4 (120.750 seconds), with a separate SRT. All 43 captions were checked; audio is unchanged from v2 and all audio/video decode. The earlier notes describe previous versions. Public hosting, final form, external judge access and other unresolved readiness items remain pending.
+
+## Interactive video revision — 17 October 2026
+
+Latest local candidate: video/renders/YouCam-Demo-v4-INTERACTIVE.mp4, 109.500 seconds, 12 temporal browser takes, original voice with three whole-sentence cuts, 38 English captions. All 1,314 frames and audio decode; all cues render; every browser take has UI-state changes. The capture method reconstructs native CUA frame sequences, not a native 30-fps recorder. See video/motion-v4/README.md and REVIEW.json. Raw takes remain local. Public hosting and final submission remain pending.
 ```
 
 ---

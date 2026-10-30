@@ -81,3 +81,19 @@ The first connection used an obsolete configured host and failed DNS resolution.
 ## Successful native clothing run
 
 The earlier CreditInsufficiency refusal was resolved by activation of the contest units. One new task succeeded in 33.474 seconds. Its 73,094-byte image was retrieved and visually compared with source and reference images. The reference outfit was transferred to a visually consistent source person. The run is preserved in docs/live/run-95e1761f.json with hashes; docs/live/PROOF.md documents the scope. This is a client/API integration proof using public URLs, not a browser E2E recording or File API upload proof. No new generation was launched for visual verification.
+
+## Silent visual edit — 17 October 2026
+
+A local 2:18 Full HD silent MP4 is exported in video/renders/YouCam-Visual-v1-SILENT.mp4. All 1,656 video frames decode; 18 representative scene frames were inspected. Narration is pending the owner’s ElevenLabs audio. Public video hosting, final submission and external judge access remain pending. See video/README.md and video/verification/REVIEW.json. No new provider task was created for this edit.
+
+## Synchronized voice edit — 17 October 2026
+
+The owner’s ElevenLabs voice is now integrated into video/renders/YouCam-Voice-v2.mp4 (120.750 seconds). Full continuous source voice preserved at natural speed; all audio/video decode and 18 scene frames reviewed. See video/voice-v2/REVIEW.json. The previous silent-edit note describes v1. Public hosting, final submission and external judge access still remain pending.
+
+## English captions completed — 17 October 2026
+
+The local narrated and subtitled edit is video/renders/YouCam-English-v3-SUBTITLED.mp4 (120.750 seconds), with a separate SRT. All 43 captions were checked; audio is unchanged from v2 and all audio/video decode. The earlier notes describe previous versions. Public hosting, final form, external judge access and other unresolved readiness items remain pending.
+
+## Interactive video revision — 17 October 2026
+
+Latest local candidate: video/renders/YouCam-Demo-v4-INTERACTIVE.mp4, 109.500 seconds, 12 temporal browser takes, original voice with three whole-sentence cuts, 38 English captions. All 1,314 frames and audio decode; all cues render; every browser take has UI-state changes. The capture method reconstructs native CUA frame sequences, not a native 30-fps recorder. See video/motion-v4/README.md and REVIEW.json. Raw takes remain local. Public hosting and final submission remain pending.
