@@ -46,13 +46,13 @@ Modeled potential business gain is an illustrative projection from internal assu
 - A live-proof command that cannot accept mock output as provider success, backed by an actual verified cloth-v4 execution.
 
 ## Next steps
-Extend the validated browser clothing workflow; implement and verify native Skin AI/color-tone mappings and accessories; complete external judge access and public video hosting.
+Extend the validated browser clothing workflow; implement and verify native Skin AI/color-tone mappings and accessories; validate live file uploads and evaluate recommendations with users.
 
 ## Built with
 Next.js 15, React 19, TypeScript, Tailwind CSS, Lucide React, Zod, Node.js test runner, Puppeteer, Chrome, Perfect Corp YouCam API client.
 
 ## Required links & deliverables
-- **Code Repository**: https://github.com/Robe092/youcam-vto-agent (Verify public access or the private evaluator sharing required by Rule 4 before submission).
-- **Working Application / Test Access**: Self-contained repository with full automated verification (`npm install && npm run dev` on port 3000), and transparent simulation mode requiring zero external credentials.
+- **Code Repository**: https://github.com/Robe092/youcam-vto-agent (public; anonymous access verified 1 November 2026).
+- **Working Application / Test Access**: https://youcam-vto-agent.onrender.com/ — public walkthrough in explicit MOCK_SIMULATED mode; no login or external credentials required. Real clothing generation is demonstrated separately in the video and repository proof. Free hosting may take 50 seconds or more to wake. Local setup and tests are documented in the repository.
 - **Live Proof Artifacts**: Browser proof from 31 October: `docs/live/browser-20261031/verification.json`, `application.png`, and `result.jpg` (12.175 seconds). Historical script proof from 16 October: `docs/live/run-95e1761f.json`.
 - **Demo Video (1–3 min)**: https://youtu.be/oMvG2b3QN_8 — final local demo: 98 seconds, English narration and captions, edited from manual screen recordings. Published publicly on the Goat channel on 31 October 2026; YouTube Studio visibility and watch-page playback were checked.
