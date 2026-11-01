@@ -18,7 +18,8 @@ try {
     await page.waitForFunction(() => !document.querySelector('[aria-busy="true"]'));
     await page.waitForNetworkIdle({ idleTime: 350 });
   };
-  await page.goto('http://localhost:3000', { waitUntil: 'networkidle0' });
+  const baseUrl = process.env.BASE_URL || `http://localhost:${process.env.PORT || 3000}`;
+  await page.goto(baseUrl, { waitUntil: 'networkidle0' });
   await settled();
   await click('Judge demo', 'Démo jury');
   await page.waitForSelector('[data-demo-step="0"]');

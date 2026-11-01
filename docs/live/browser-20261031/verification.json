@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-31T12:57:28.438Z",
+  "testClass": "REAL_BROWSER_TO_APPLICATION_TO_PROVIDER",
+  "httpStatus": 200,
+  "browserTryOnRequests": 1,
+  "state": "LIVE_YOUCAM",
+  "status": "SUCCESS",
+  "elapsedMs": 12175,
+  "visualReview": "PASS_QUALITATIVE",
+  "result": "SUCCESS",
+  "imageBytes": 138526,
+  "visualReviewNotes": "Generated image and application screenshot inspected: cream jacket, red top, jeans and black boots match official reference; source person and pose visually consistent. Live badge distinguishes simulated stylist profiles; unavailable provider scores show dashes.",
+  "imageSha256": "838c83615d1a86ad807dff579b55557e3df28936aaa04fb74c2470f1f10e8b28",
+  "scope": "One real browser URL-input clothing try-on. Does not validate File API upload, Skin AI, accessories or measured commercial impact."
+}

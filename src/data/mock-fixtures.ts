@@ -62,12 +62,12 @@ export const MOCK_PERSONAS: Record<string, PersonaFixture> = {
         drape: "Drapé soyeux impeccable le long de la ligne d'épaules et retombée fluide sans tension.",
       },
       "vto_dress_02": {
-        outputUrl: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1000&q=85",
-        fidelity: 95,
-        fitScore: 92,
-        harmony: 91,
-        advice: "L'Émeraude Royale crée un contraste élégant avec votre carnation. Ajustement taille 38 parfait au niveau du buste.",
-        drape: "Satin de viscose au tombé vertical lourd, valorisant la cambrure sans marquer les hanches.",
+        outputUrl: "https://plugins-media.makeupar.com/strapi/assets/clothes_reference_full_body_01_5a000d999f.png",
+        fidelity: 96,
+        fitScore: 94,
+        harmony: 95,
+        advice: "L'ensemble veste crème et top rubis s'accorde harmonieusement avec votre carnation. Ajustement taille 38 structurant la carrure.",
+        drape: "Veste texturée en laine bouclée crème sur top fluide carmin et denim structuré, tombé net et équilibré.",
       },
       "vto_outer_03": {
         outputUrl: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=85",

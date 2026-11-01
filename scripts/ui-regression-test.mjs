@@ -13,7 +13,8 @@ try {
   page.on('request', request => { if (request.url().endsWith('/api/personal-shopper')) shopperCalls++; });
   page.on('pageerror', error => errors.push(error.message));
   await page.setViewport({ width: 1440, height: 1000 });
-  await page.goto('http://localhost:3000', { waitUntil: 'networkidle0' });
+  const baseUrl = process.env.BASE_URL || `http://localhost:${process.env.PORT || 3000}`;
+  await page.goto(baseUrl, { waitUntil: 'networkidle0' });
   await page.waitForFunction(() => !document.querySelector('[aria-busy="true"]'));
   assert.equal(await page.$eval('.studio-app', el => getComputedStyle(el).backgroundColor), 'rgb(246, 247, 245)');
   const clickText = (...texts) => page.evaluate((...values) => {

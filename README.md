@@ -15,7 +15,7 @@ Official contest: [YouCam API Skin AI & eCommerce VTO Hackathon](https://youcam-
 - **Strict dual-mode architecture**:
   - **Live Mode (`LIVE_YOUCAM`)**: Targets Perfect Corp's official API host (`https://yce-api-01.makeupar.com`) with native `cloth-v4` contracts and presigned binary PUT file uploads.
   - **Simulation Mode (`MOCK_SIMULATED`)**: Self-contained development and reviewer testing with realistic fixtures, dynamic SVG garment rendering, and zero secret requirements.
-- **100% verified test coverage**: 23 unit tests, Chrome headless E2E browser tests, visual regression tests across 4 viewports, and zero TypeScript errors.
+- **Verified test battery**: 23 unit and contract tests, hybrid arrival order robustness test (`hybrid-order-test.mjs`), Chrome headless E2E browser tests, visual regression tests across 4 viewports (1440px, 1024px, 768px, 390px), clean non-interactive ESLint verification, and zero TypeScript errors.
 
 ## Architecture & Provenance
 
@@ -24,9 +24,9 @@ Official contest: [YouCam API Skin AI & eCommerce VTO Hackathon](https://youcam-
 | **Clothes VTO (Live)** | Native `cloth-v4` task with task-specific polling on Perfect Corp API | **Verified real generation** (`73KB` output image, 33.4s task); see [`docs/live/PROOF.md`](docs/live/PROOF.md) |
 | **File Storage API (Live)** | Native 2-step JSON initialization and binary PUT to pre-signed URL | Validated with controlled contract test suite |
 | **Virtual Fitting Room (Simulation)** | Dynamic SVG illustration (`DemoGarment`) with real-time color and fit scaling | Full Chrome E2E suite (1440px, 1024px, 768px, 390px) |
-| **Personal Shopper Engine** | Color harmony scoring based on undertone affinity and 4-season palette | Mathematical invariant unit tests (23/23 PASS) |
-| **Skin Assessment (11 Dimensions)** | 11-dimension dermatological beauty assessment fixtures | Illustrated in simulation; native mapping pending |
-| **E-Commerce Value Demonstrator** | Interactive annual volume simulator with transparent formula & ROI breakdown | Client-side reactive arithmetic (zero superfluous network calls) |
+| **Personal Shopper Engine** | Local rule-based color harmony scoring based on undertone affinity and 4-season palette | Mathematical invariant unit tests (23/23 PASS) |
+| **Skin Assessment (11 Dimensions)** | 11-dimension dermatological beauty assessment demo fixtures | Illustrated in simulation with demo fixtures; native Skin AI mapping pending / not implemented for this VTO entry |
+| **E-Commerce Value Demonstrator** | Interactive annual volume simulator with transparent formula & modeled potential gain | Client-side reactive arithmetic (zero superfluous network calls, margin/acquisition costs excluded) |
 
 ## Run locally
 
@@ -71,12 +71,14 @@ Default source/reference URLs are official Clothes API documentation samples. Op
 
 ~~~sh
 npm test
+npm run lint
 npx tsc --noEmit
 npm run build
 npm run test:e2e
+node scripts/hybrid-order-test.mjs
 ~~~
 
-E2E explicitly forces mock_only, even if a key exists. Against a running simulation server:
+E2E explicitly forces mock_only, even if a key exists. Against a running simulation server (port 3000):
 
 ~~~sh
 node scripts/ui-regression-test.mjs
@@ -101,3 +103,10 @@ Regenerate with python3 scripts/build-gemini-bundle.py.
 ## Verified provider result
 
 The first actual cloth-v4 run succeeded on 16 October 2026 in 33.474 seconds. One task produced an image that was compared visually against the official sample inputs. See [the proof](docs/live/PROOF.md) and docs/live/run-95e1761f.json. This does not establish live Skin AI, accessories, real file upload or measured business impact.
+
+
+## Browser validation — 31 October 2026
+
+A real clothing try-on was initiated by a click in Chrome, through the application route `/api/try-on`, and completed as `LIVE_YOUCAM` / `SUCCESS` in 12.175 seconds. The generated image was displayed in the fitting room and visually reviewed against the official source person and outfit. One browser try-on request was sent. See [browser evidence](docs/live/browser-20261031/verification.json), [application capture](docs/live/browser-20261031/application.png) and [result](docs/live/browser-20261031/result.jpg). This validates the public-image-URL browser path; live File API upload, Skin AI, accessories and commercial impact remain unverified. The earlier 16 October proof is retained as historical evidence.
+
+The final locally exported narrated demo is 98 seconds, with English captions. The public demo is available at https://youtu.be/oMvG2b3QN_8 (Goat channel, published 31 October 2026). External judge access and final submission still need to be completed.

@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import puppeteer from 'puppeteer-core';
 
+const baseUrl = process.env.BASE_URL || `http://localhost:${process.env.PORT || 3000}`;
 const browser = await puppeteer.launch({ executablePath: process.env.CHROME_BIN || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true });
 try {
   const page = await browser.newPage();
@@ -18,7 +19,9 @@ try {
     if (url.hostname === 'example.test') return void request.respond({ status: 200, contentType: 'image/png', body: Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+/l9sAAAAASUVORK5CYII=', 'base64') });
     void request.continue();
   });
-  await page.goto('http://localhost:3000', { waitUntil: 'networkidle0' });
+  await page.goto(baseUrl, { waitUntil: 'networkidle0' });
+  await page.waitForSelector('#try-on-button');
+  await page.click('#try-on-button');
   await page.waitForFunction(() => document.querySelector('.mode-badge')?.textContent.includes('LIVE_YOUCAM'));
   assert.deepEqual(await page.$$eval('.score-grid strong', els => els.map(el => el.textContent)), ['—', '—', '—']);
   assert.equal(await page.$eval('.profile-card', el => getComputedStyle(el).display), 'none');

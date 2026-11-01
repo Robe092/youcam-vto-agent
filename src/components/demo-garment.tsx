@@ -33,8 +33,17 @@ export function DemoGarment({ item, color, fitMode = "regular", className = "", 
         {[164, 196, 228, 260, 292].map(y => <circle key={y} cx="180" cy={y} r="2" fill={stroke} />)}
       </>}
       {item.category === "dresses" && <>
-        <path d="M142 78L128 92 140 169 149 196 102 359Q180 380 258 359L211 196 220 169 232 92 218 78 210 131Q180 151 150 131Z" />
-        <path d="M150 131Q180 161 210 131M149 196Q180 203 211 196M162 207L147 357M198 207L215 357M180 205V367" fill="none" /><path d="M215 279L225 361" strokeWidth="2" />
+        {/* Pantalon Denim / Gris sombre */}
+        <path d="M136 215H224L238 366 189 366 180 252 171 366 122 366Z" fill="#364052" stroke={stroke} strokeWidth="1" />
+        {/* Top Rouge Rubis au centre */}
+        <path d="M152 108H208L216 220H144Z" fill="#9B111E" stroke={stroke} strokeWidth="1" />
+        {/* Veste Crème gauche */}
+        <path d="M142 85L118 105 74 135 58 258 96 264 116 168 112 250 148 250 144 108Z" fill={fill} stroke={stroke} strokeWidth="1.2" />
+        {/* Veste Crème droite */}
+        <path d="M218 85L242 105 286 135 302 258 264 264 244 168 248 250 212 250 216 108Z" fill={fill} stroke={stroke} strokeWidth="1.2" />
+        {/* Col et revers de la veste */}
+        <path d="M142 85L180 120 218 85 228 128 180 152 132 128Z" fill={fill} stroke={stroke} strokeWidth="1" />
+        <line x1="180" y1="252" x2="180" y2="366" stroke="#222" strokeWidth="1" />
       </>}
       {item.category === "bottoms" && <>
         <path d="M123 79H237L248 174 233 366 189 366 180 213 171 366 127 366 112 174Z" /><path d="M123 96H237M180 98V167M137 108L127 169M223 108L233 169M146 111L151 356M214 111L209 356M129 355H171M189 355H232" fill="none" /><circle cx="180" cy="87" r="2" fill={stroke} />

@@ -97,3 +97,8 @@ The local narrated and subtitled edit is video/renders/YouCam-English-v3-SUBTITL
 ## Interactive video revision — 17 October 2026
 
 Latest local candidate: video/renders/YouCam-Demo-v4-INTERACTIVE.mp4, 109.500 seconds, 12 temporal browser takes, original voice with three whole-sentence cuts, 38 English captions. All 1,314 frames and audio decode; all cues render; every browser take has UI-state changes. The capture method reconstructs native CUA frame sequences, not a native 30-fps recorder. See video/motion-v4/README.md and REVIEW.json. Raw takes remain local. Public hosting and final submission remain pending.
+
+
+## Current update — 31 October 2026
+
+The missing-key and script-only limitations above describe earlier states. The private key was subsequently configured, and a Chrome browser click completed one real application-to-provider clothing try-on in 12.175 seconds. The image and application display were visually reviewed. Evidence: `docs/live/browser-20261031/verification.json`. The image-URL path is validated; real File API upload, live Skin AI and accessories are not established. The current local narrated/captioned demo lasts 98 seconds. A public video link, verified external project/code access, owner declarations and final Devpost submission remain pending.

@@ -22,35 +22,37 @@ Next.js 15, React 19, TypeScript, Tailwind CSS, Lucide and Zod support the inter
 
 The clothing adapter targets Perfect Corp's documented cloth-v4 API, using native source/reference fields, garment_category and task-specific polling. File uploads initialize JSON metadata before transferring bytes to the provided storage URL.
 
-These contracts are tested with controlled responses. **One real cloth-v4 execution has now succeeded after activation of the contest units. Its downloaded output was visually compared with both official sample inputs.** Skin AI response mapping and live accessories remain incomplete. The 11-dimension report is a fixture demonstration.
+These contracts are tested with controlled responses. **A real browser try-on was validated on 31 October 2026: a user click called the application route and the YouCam cloth-v4 provider, returning LIVE_YOUCAM / SUCCESS in 12.175 seconds. The generated image was displayed in the fitting room and visually reviewed. One browser try-on request was sent. This validates the image-URL path; live File API upload remains unverified.** The earlier script-based proof from 16 October is retained separately. Skin AI response mapping and live accessories remain incomplete. The 11-dimension report is a fixture demonstration.
 
 ## Transparency
-MOCK_SIMULATED identifies demo mode: local product illustrations, not generated images of the selected person. Size/fit/color controls do not prove body measurement or native API control.
+MOCK_SIMULATED identifies demo mode: local product illustrations, not generated images of the selected person. Size/fit/color controls do not prove body measurement or native API control, and cloth-v4 does not take size or cut parameters.
 
-The native Clothes response does not provide the three demo scores. Live output displays them unavailable. Provider errors are not silently replaced with mock results.
+The 11-dimension skin profile, skin age, and undertone scores are simulated fixture demonstrations, not a medical diagnostic or live biometric measurement. The Personal Shopper uses transparent local color-harmony rules based on undertone affinity.
 
-ROI is a scenario from internal assumptions, not a measured experiment. It adds modeled basket revenue and avoided return-processing costs, excluding margins, API, acquisition, integration and operations. Conversion uplift is not monetized in that total.
+The native Clothes response does not provide the three demo scores. Live output displays them unavailable ('—'). Clothing-generation provider errors are never silently replaced with mock VTO results. Stylist profiles remain explicitly labeled demonstrations. Dual-mode state architecture ensures complete decoupling between try-on and stylist profiles, preserving consistent UI state and badges regardless of response arrival order.
+
+Modeled potential business gain is an illustrative projection from internal assumptions, not a measured commercial experiment. It adds modeled basket revenue and avoided return-processing costs, excluding margins, API, acquisition, integration and operations. Conversion uplift is not monetized in that total.
 
 ## Challenges
-- Keeping fixture data distinguishable from provider results.
+- Keeping fixture data strictly distinguishable from provider results regardless of network response ordering.
 - Verifying native contracts instead of relying on mock tests.
-- Avoiding extra provider tasks when adjusting the ROI slider.
+- Preventing accidental provider tasks when adjusting size, cut, color, or ROI sliders.
 - Presenting unavailable metrics without favorable invented defaults.
 
 ## Accomplishments
-- A complete local walkthrough in two languages.
-- Tests for pricing, recommendations, mode handling and native parsing.
+- A complete local walkthrough in two languages (French and English) across 4 responsive viewports (1440px, 1024px, 768px, 390px).
+- Robust test battery: 23 unit/contract invariant tests, hybrid arrival order test suite, Chrome headless E2E verification, and zero ESLint/TypeScript errors.
 - Automated Chrome scenes and responsive captures.
-- A live-proof command that cannot accept mock output as provider success.
+- A live-proof command that cannot accept mock output as provider success, backed by an actual verified cloth-v4 execution.
 
 ## Next steps
-Build on the verified clothing run; implement native Skin AI/color-tone mappings and accessories; prepare judge access and an English end-to-end recording.
+Extend the validated browser clothing workflow; implement and verify native Skin AI/color-tone mappings and accessories; complete external judge access and public video hosting.
 
 ## Built with
 Next.js 15, React 19, TypeScript, Tailwind CSS, Lucide React, Zod, Node.js test runner, Puppeteer, Chrome, Perfect Corp YouCam API client.
 
 ## Required links & deliverables
-- **Code Repository**: https://github.com/Robe092/youcam-vto-agent
-- **Working Application / Test Access**: Public repository with full test suites, automated setup (`npm install && npm run dev`), and transparent simulation demo.
-- **Live Proof Artifacts**: Verified native `cloth-v4` generation recorded in `docs/live/run-95e1761f.json` and `docs/live/result.jpg` (33.4s task, 73KB output image).
-- **Demo Video (1–3 min)**: [Link to YouTube / Vimeo public video] (Recorded following `DEMO_VIDEO_SCRIPT.md`).
+- **Code Repository**: https://github.com/Robe092/youcam-vto-agent (Verify public access or the private evaluator sharing required by Rule 4 before submission).
+- **Working Application / Test Access**: Self-contained repository with full automated verification (`npm install && npm run dev` on port 3000), and transparent simulation mode requiring zero external credentials.
+- **Live Proof Artifacts**: Browser proof from 31 October: `docs/live/browser-20261031/verification.json`, `application.png`, and `result.jpg` (12.175 seconds). Historical script proof from 16 October: `docs/live/run-95e1761f.json`.
+- **Demo Video (1–3 min)**: https://youtu.be/oMvG2b3QN_8 — final local demo: 98 seconds, English narration and captions, edited from manual screen recordings. Published publicly on the Goat channel on 31 October 2026; YouTube Studio visibility and watch-page playback were checked.

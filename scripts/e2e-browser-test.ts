@@ -169,12 +169,16 @@ async function run() {
       if (el instanceof HTMLElement) el.click();
     }, coatCard);
 
-    // Attente du traitement morphologique
-    await page.waitForFunction(() => {
-      const txt = document.body.innerText;
-      return !txt.includes("Ajustement morphologique en cours") && !txt.includes("Preparing your try-on");
-    });
-    await new Promise((r) => setTimeout(r, 400));
+    // Lancement explicite de l'essayage via le bouton cabine
+    const tryOnButton = await page.$("#try-on-button");
+    if (tryOnButton) {
+      await tryOnButton.click();
+      await page.waitForFunction(() => {
+        const txt = document.body.innerText;
+        return !txt.includes("Ajustement morphologique en cours") && !txt.includes("Preparing your try-on");
+      });
+      await new Promise((r) => setTimeout(r, 400));
+    }
 
     const selectedGarment = await page.$eval('.product-card[aria-pressed="true"]', el => el.textContent);
     assert.ok(
@@ -219,8 +223,11 @@ async function run() {
     assert.ok(abText.includes("3.2x") || abText.includes("x"), "Le multiplicateur de conversion doit être affiché");
     assert.ok(abText.includes("-") && abText.includes("%"), "La réduction des retours doit être affichée");
     assert.ok(
-      abText.toLowerCase().includes("bénéfice net annuel") || abText.toLowerCase().includes("estimated annual net benefit"),
-      "Le bénéfice net annuel doit être chiffré"
+      abText.toLowerCase().includes("gain potentiel modélisé") ||
+      abText.toLowerCase().includes("modeled potential business gain") ||
+      abText.toLowerCase().includes("gain commercial") ||
+      abText.toLowerCase().includes("bénéfice net annuel"),
+      "Le gain modélisé doit être affiché et chiffré"
     );
 
     const screenshot4Path = path.join(outputDir, "04-ab-business-impact.png");
@@ -243,8 +250,11 @@ async function run() {
     await new Promise((r) => setTimeout(r, 400));
     const skinText = await page.evaluate(() => document.body.innerText);
     assert.ok(
-      skinText.includes("Bilan Dermatologique IA") || skinText.includes("AI Skin Assessment"),
-      "Le titre du bilan dermatologique doit être visible"
+      skinText.includes("Aperçu Profil Peau (Simulé)") ||
+      skinText.includes("Simulated Skin Profile Preview") ||
+      skinText.includes("Bilan Dermatologique IA") ||
+      skinText.includes("AI Skin Assessment"),
+      "Le titre de l'aperçu du profil peau doit être visible"
     );
     assert.ok(
       skinText.toLowerCase().includes("wrinkles") ||

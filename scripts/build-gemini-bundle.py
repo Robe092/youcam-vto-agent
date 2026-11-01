@@ -30,6 +30,9 @@ files_to_bundle = [
     'video/motion-v4/YouCam-English-v4.srt',
     'video/motion-v4/REVIEW.json',
     'package.json',
+    'package-lock.json',
+    '.eslintrc.json',
+    'LICENSE',
     'tsconfig.json',
     'tailwind.config.ts',
     'postcss.config.js',
@@ -58,10 +61,13 @@ files_to_bundle = [
     'scripts/jury-demo-test.mjs',
     'scripts/live-ui-contract-test.mjs',
     'scripts/live-youcam-proof.ts',
+    'scripts/hybrid-order-test.mjs',
     'scripts/build-gemini-bundle.py',
     'docs/UI_VALIDATION.md',
     'docs/SUBMISSION_READINESS.md',
+    'docs/MEDIA_PROVENANCE.md',
     'docs/live/STATUS.json',
+    'docs/live/browser-20261031/verification.json',
     'docs/live/PROOF.md',
     'docs/live/run-95e1761f.json',
     'docs/live/attempt-01.json',
@@ -111,7 +117,7 @@ with zipfile.ZipFile(output_zip, 'w', zipfile.ZIP_DEFLATED) as zf:
 
 # Native proof bitmaps are binary assets: include them in the ZIP, never decode as Markdown.
 with zipfile.ZipFile(output_zip, 'a', zipfile.ZIP_DEFLATED) as zf:
-    for name in ['docs/live/result.jpg', 'docs/live/input-source.jpeg', 'docs/live/input-reference.png']:
+    for name in ['docs/live/browser-20261031/result.jpg', 'docs/live/browser-20261031/application.png', 'docs/live/result.jpg', 'docs/live/input-source.jpeg', 'docs/live/input-reference.png']:
         asset = os.path.join(root_dir, name)
         if os.path.exists(asset):
             zf.write(asset, arcname=name)
